@@ -33,6 +33,7 @@ struct StudentLocation : Codable {
         case latitude
         case longitude
         case mapString
+        case mediaURL
         case objectId
         case uniqueKey
         case updatedAt

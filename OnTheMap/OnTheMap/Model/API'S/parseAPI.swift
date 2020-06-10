@@ -28,27 +28,28 @@ class parseAPI {
             case .base:
                 return "https://onthemap-api.udacity.com/v1/StudentLocation"
             case .limit:
-                return "https://onthemap-api.udacity.com/v1/StudentLocation?limit=100"
+                return "?limit=100"
             case .skip:
-                return "https://onthemap-api.udacity.com/v1/StudentLocation?limit=200&skip=400"
+                return "&skip=400"
             case .order:
-                return "https://onthemap-api.udacity.com/v1/StudentLocation?order=-updatedAt"
+                return "&order=-updatedAt"
             case .uniqueKey:
-                return "https://onthemap-api.udacity.com/v1/StudentLocation?uniqueKey=1234"
+                return "uniqueKey=1234"
                 
             }
         }
     }
     
-    class func getRequest(_: String, completionHandler: @escaping (StudentLocation?, Error?) -> Void) {
+    class func getRequest(completionHandler: @escaping (StudentLocationList?, Error?) -> Void) {
         
-        let task = URLSession.shared.dataTask(with: Endpoint.base.url) { data, response, error in
+        let url = URL(string: "\(Endpoint.base)\(Endpoint.limit)\(Endpoint.skip)\(Endpoint.order)")
+        let task = URLSession.shared.dataTask(with: url! ) { data, response, error in
           guard let data = data else {
               completionHandler(nil, error)
               return
           }
           let decoder = JSONDecoder()
-          let student = try! decoder.decode(StudentLocation.self, from: data)
+          let student = try! decoder.decode(StudentLocationList.self, from: data)
           completionHandler(student , error)
             print(String(data: data, encoding: .utf8)!)
         }
