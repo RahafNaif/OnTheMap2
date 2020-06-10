@@ -42,7 +42,7 @@ class parseAPI {
     
     class func getRequest(completionHandler: @escaping (StudentLocationList?, Error?) -> Void) {
         
-        let url = URL(string: "\(Endpoint.base)\(Endpoint.limit)\(Endpoint.skip)\(Endpoint.order)")
+        let url = URL(string: "\(Endpoint.base.url)\(Endpoint.limit.url)\(Endpoint.skip.url)\(Endpoint.order.url)")
         let task = URLSession.shared.dataTask(with: url! ) { data, response, error in
           guard let data = data else {
               completionHandler(nil, error)
