@@ -7,27 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		024429FB2498EB18008DEB01 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024429FA2498EB18008DEB01 /* MapViewController.swift */; };
+		026D0B2C24971B0F002928B8 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026D0B2B24971B0F002928B8 /* LoginResponse.swift */; };
 		027363C6248A616B007FF5E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027363C5248A616B007FF5E8 /* AppDelegate.swift */; };
 		027363C8248A616B007FF5E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027363C7248A616B007FF5E8 /* SceneDelegate.swift */; };
-		027363CA248A616B007FF5E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027363C9248A616B007FF5E8 /* ViewController.swift */; };
+		027363CA248A616B007FF5E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027363C9248A616B007FF5E8 /* LoginViewController.swift */; };
 		027363CD248A616B007FF5E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 027363CB248A616B007FF5E8 /* Main.storyboard */; };
 		027363CF248A616D007FF5E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027363CE248A616D007FF5E8 /* Assets.xcassets */; };
 		027363D2248A616D007FF5E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 027363D0248A616D007FF5E8 /* LaunchScreen.storyboard */; };
 		027363E0248CC304007FF5E8 /* parseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027363DF248CC304007FF5E8 /* parseAPI.swift */; };
 		027363E2248CE5A6007FF5E8 /* StudentLocationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027363E1248CE5A6007FF5E8 /* StudentLocationList.swift */; };
+		0296A41324944537009CDDA2 /* UdacityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0296A41224944537009CDDA2 /* UdacityAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		024429FA2498EB18008DEB01 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		026D0B2B24971B0F002928B8 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		027363C2248A616B007FF5E8 /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		027363C5248A616B007FF5E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		027363C7248A616B007FF5E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		027363C9248A616B007FF5E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		027363C9248A616B007FF5E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		027363CC248A616B007FF5E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		027363CE248A616D007FF5E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		027363D1248A616D007FF5E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		027363D3248A616D007FF5E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		027363DF248CC304007FF5E8 /* parseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parseAPI.swift; sourceTree = "<group>"; };
 		027363E1248CE5A6007FF5E8 /* StudentLocationList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLocationList.swift; sourceTree = "<group>"; };
+		0296A41224944537009CDDA2 /* UdacityAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,8 @@
 				027363D9248B825B007FF5E8 /* Controller */,
 				027363DA248B8293007FF5E8 /* View */,
 				027363D3248A616D007FF5E8 /* Info.plist */,
+				027363C5248A616B007FF5E8 /* AppDelegate.swift */,
+				027363C7248A616B007FF5E8 /* SceneDelegate.swift */,
 			);
 			path = OnTheMap;
 			sourceTree = "<group>";
@@ -71,9 +79,8 @@
 		027363D9248B825B007FF5E8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				027363C9248A616B007FF5E8 /* ViewController.swift */,
-				027363C7248A616B007FF5E8 /* SceneDelegate.swift */,
-				027363C5248A616B007FF5E8 /* AppDelegate.swift */,
+				027363C9248A616B007FF5E8 /* LoginViewController.swift */,
+				024429FA2498EB18008DEB01 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -93,6 +100,7 @@
 			children = (
 				027363E1248CE5A6007FF5E8 /* StudentLocationList.swift */,
 				027363DE248CC2D3007FF5E8 /* API'S */,
+				026D0B2B24971B0F002928B8 /* LoginResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -101,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				027363DF248CC304007FF5E8 /* parseAPI.swift */,
+				0296A41224944537009CDDA2 /* UdacityAPI.swift */,
 			);
 			path = "API'S";
 			sourceTree = "<group>";
@@ -177,10 +186,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				027363E0248CC304007FF5E8 /* parseAPI.swift in Sources */,
-				027363CA248A616B007FF5E8 /* ViewController.swift in Sources */,
+				027363CA248A616B007FF5E8 /* LoginViewController.swift in Sources */,
+				0296A41324944537009CDDA2 /* UdacityAPI.swift in Sources */,
 				027363C6248A616B007FF5E8 /* AppDelegate.swift in Sources */,
 				027363C8248A616B007FF5E8 /* SceneDelegate.swift in Sources */,
 				027363E2248CE5A6007FF5E8 /* StudentLocationList.swift in Sources */,
+				026D0B2C24971B0F002928B8 /* LoginResponse.swift in Sources */,
+				024429FB2498EB18008DEB01 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

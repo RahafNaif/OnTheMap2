@@ -42,8 +42,11 @@ class parseAPI {
     
     class func getRequest(completionHandler: @escaping (StudentLocationList?, Error?) -> Void) {
         
-        let url = URL(string: "\(Endpoint.base.url)\(Endpoint.limit.url)\(Endpoint.skip.url)\(Endpoint.order.url)")
-        let task = URLSession.shared.dataTask(with: url! ) { data, response, error in
+        var request = URLRequest(url: URL(string: "\(Endpoint.base.url)\(Endpoint.limit.url)\(Endpoint.order.url)")!)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let task = URLSession.shared.dataTask(with: request ) { data, response, error in
           guard let data = data else {
               completionHandler(nil, error)
               return
@@ -55,6 +58,46 @@ class parseAPI {
         }
         task.resume()
         
+    }
+    
+    class func postRequest(completionHandler: @escaping (StudentLocationList?, Error?) -> Void) {
+        
+        var request = URLRequest(url: URL(string: "https://onthemap-api.udacity.com/v1/StudentLocation")!)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = "{\"uniqueKey\": \"1234\", \"firstName\": \"John\", \"lastName\": \"Doe\",\"mapString\": \"Mountain View, CA\", \"mediaURL\": \"https://udacity.com\",\"latitude\": 37.386052, \"longitude\": -122.083851}".data(using: .utf8)
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+          guard let data = data else {
+              completionHandler(nil, error)
+              return
+          }
+          let decoder = JSONDecoder()
+          let student = try! decoder.decode(StudentLocationList.self, from: data)
+          completionHandler(student , error)
+          print(String(data: data, encoding: .utf8)!)
+        }
+        task.resume()
+    }
+    
+    class func putRequest(completionHandler: @escaping (StudentLocationList?, Error?) -> Void) {
+        
+        var request = URLRequest(url: URL(string: "https://onthemap-api.udacity.com/v1/StudentLocation/8ZExGR5uX8")!)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = "{\"uniqueKey\": \"1234\", \"firstName\": \"John\", \"lastName\": \"Doe\",\"mapString\": \"Mountain View, CA\", \"mediaURL\": \"https://udacity.com\",\"latitude\": 37.386052, \"longitude\": -122.083851}".data(using: .utf8)
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+          guard let data = data else {
+              completionHandler(nil, error)
+              return
+          }
+          let decoder = JSONDecoder()
+          let student = try! decoder.decode(StudentLocationList.self, from: data)
+          completionHandler(student , error)
+          print(String(data: data, encoding: .utf8)!)
+        }
+        task.resume()
     }
     
     

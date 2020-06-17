@@ -9,7 +9,7 @@
 import Foundation
 
 struct StudentLocationList : Codable {
-    let results: [StudentLocation]
+    var results: [StudentLocation]
 }
 
 struct StudentLocation : Codable {
