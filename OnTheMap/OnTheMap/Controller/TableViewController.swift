@@ -40,7 +40,7 @@ class TableViewController : UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell")!
         let location = self.locations[(indexPath as NSIndexPath).row]
         
-        cell.textLabel?.text = location.firstName + location.lastName
+        cell.textLabel?.text = "\(location.firstName) \(location.lastName)"
         cell.detailTextLabel?.text = location.mediaURL
         
         return cell
@@ -53,5 +53,11 @@ class TableViewController : UIViewController, UITableViewDataSource, UITableView
         UIApplication.shared.open(url!, options: [:], completionHandler: nil)
     }
     
+    @IBAction func logoutTapped(_ sender: Any) {
+        UdacityAPI.deleteSession(completionHandler:{ (error) in
+            self.dismiss(animated: true, completion: nil)
+             
+        })
+    }
     
 }

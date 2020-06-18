@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="OnTheMap" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="LoginViewController" customModule="OnTheMap" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,14 +117,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMs-Zp-In7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1061" y="27"/>
+            <point key="canvasLocation" x="1003" y="27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aJ4-bi-Gpk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d55-LU-n21" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="yQb-8J-TC5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" selectedImage="icon_mapview-deselected" id="wK4-td-oJE"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_mapview-deselected" id="wK4-td-oJE"/>
                     <navigationItem key="navigationItem" id="Kch-YZ-7F0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qLg-60-aZ5">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -134,6 +133,7 @@
                         <segue destination="q9l-x6-A7x" kind="relationship" relationship="rootViewController" id="6f8-7n-RRq"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d55-LU-n21" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1848" y="-240"/>
         </scene>
@@ -159,7 +159,11 @@
                         <viewLayoutGuide key="safeArea" id="0OK-ew-aWi"/>
                     </view>
                     <navigationItem key="navigationItem" title="OnTheMap" id="6lq-VF-6W0">
-                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="4MA-vj-aJh"/>
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="4MA-vj-aJh">
+                            <connections>
+                                <action selector="logoutTapped:" destination="q9l-x6-A7x" id="dW7-Av-qPE"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="icon_addpin" id="4Zu-rp-7i2"/>
                             <barButtonItem image="icon_refresh" id="uUA-bh-SIU"/>
@@ -199,24 +203,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="AiY-Ay-2nG" imageView="z95-9a-3Fm" style="IBUITableViewCellStyleDefault" id="TDT-1g-OP7" customClass="locationCell" customModule="OnTheMap">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" textLabel="AiY-Ay-2nG" detailTextLabel="7fl-Vk-f3P" imageView="z95-9a-3Fm" style="IBUITableViewCellStyleSubtitle" id="TDT-1g-OP7" customClass="locationCell" customModule="OnTheMap">
+                                <rect key="frame" x="0.0" y="28" width="414" height="55.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TDT-1g-OP7" id="hi4-5J-EqP">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AiY-Ay-2nG">
-                                            <rect key="frame" x="59" y="0.0" width="335" height="43.666667938232422"/>
+                                            <rect key="frame" x="59" y="8.9999999999999982" width="33.333333333333336" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="icon_pin" id="z95-9a-3Fm">
-                                            <rect key="frame" x="20" y="9.6666666666666643" width="24" height="24"/>
+                                            <rect key="frame" x="20" y="15.666666666666664" width="24" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7fl-Vk-f3P">
+                                            <rect key="frame" x="59" y="31.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -227,7 +238,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="OnTheMap" id="oYR-kZ-p1f">
-                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="hRF-Ma-sqX"/>
+                        <barButtonItem key="leftBarButtonItem" title="LOGOUT" id="hRF-Ma-sqX">
+                            <connections>
+                                <action selector="logoutTapped:" destination="IvV-nY-du7" id="CLT-c4-5vy"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="icon_addpin" id="fdt-Bn-aQ3"/>
                             <barButtonItem image="icon_refresh" id="G2s-BR-AXg"/>

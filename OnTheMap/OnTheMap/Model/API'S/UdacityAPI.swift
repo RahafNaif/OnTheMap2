@@ -54,7 +54,7 @@ class UdacityAPI {
         
     }
     
-        func deleteSession(completionHandler: @escaping (String?)->Void){
+        class func deleteSession(completionHandler: @escaping (Error?)->Void){
     
         var request = URLRequest(url: URL(string: "https://onthemap-api.udacity.com/v1/session")!)
         request.httpMethod = "DELETE"

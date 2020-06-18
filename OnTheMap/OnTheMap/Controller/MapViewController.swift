@@ -76,6 +76,15 @@ class MapViewController : UIViewController, MKMapViewDelegate{
             }
         }
     }
+    
+    @IBAction func logoutTapped(_ sender: Any) {
+    
+        UdacityAPI.deleteSession(completionHandler:{ (error) in
+            self.dismiss(animated: true, completion: nil)
+             
+        })
+    }
+            
         
 }
         
