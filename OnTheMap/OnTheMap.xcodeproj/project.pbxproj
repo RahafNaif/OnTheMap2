@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		024429FB2498EB18008DEB01 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024429FA2498EB18008DEB01 /* MapViewController.swift */; };
+		024429FD249A7097008DEB01 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024429FC249A7097008DEB01 /* TableViewController.swift */; };
 		026D0B2C24971B0F002928B8 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026D0B2B24971B0F002928B8 /* LoginResponse.swift */; };
 		027363C6248A616B007FF5E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027363C5248A616B007FF5E8 /* AppDelegate.swift */; };
 		027363C8248A616B007FF5E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027363C7248A616B007FF5E8 /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		024429FA2498EB18008DEB01 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		024429FC249A7097008DEB01 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		026D0B2B24971B0F002928B8 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		027363C2248A616B007FF5E8 /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		027363C5248A616B007FF5E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				027363C9248A616B007FF5E8 /* LoginViewController.swift */,
 				024429FA2498EB18008DEB01 /* MapViewController.swift */,
+				024429FC249A7097008DEB01 /* TableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				027363C8248A616B007FF5E8 /* SceneDelegate.swift in Sources */,
 				027363E2248CE5A6007FF5E8 /* StudentLocationList.swift in Sources */,
 				026D0B2C24971B0F002928B8 /* LoginResponse.swift in Sources */,
+				024429FD249A7097008DEB01 /* TableViewController.swift in Sources */,
 				024429FB2498EB18008DEB01 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
