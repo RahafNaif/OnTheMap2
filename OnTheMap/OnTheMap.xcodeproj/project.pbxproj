@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02404ED0249CC43700983CAE /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02404ECF249CC43700983CAE /* AddViewController.swift */; };
 		024429FB2498EB18008DEB01 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024429FA2498EB18008DEB01 /* MapViewController.swift */; };
 		024429FD249A7097008DEB01 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024429FC249A7097008DEB01 /* TableViewController.swift */; };
+		0256449C249E21F700635FEC /* ConfirmLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256449B249E21F700635FEC /* ConfirmLocationViewController.swift */; };
 		026D0B2C24971B0F002928B8 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026D0B2B24971B0F002928B8 /* LoginResponse.swift */; };
 		027363C6248A616B007FF5E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027363C5248A616B007FF5E8 /* AppDelegate.swift */; };
 		027363C8248A616B007FF5E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027363C7248A616B007FF5E8 /* SceneDelegate.swift */; };
@@ -22,8 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02404ECF249CC43700983CAE /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		024429FA2498EB18008DEB01 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		024429FC249A7097008DEB01 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		0256449B249E21F700635FEC /* ConfirmLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmLocationViewController.swift; sourceTree = "<group>"; };
 		026D0B2B24971B0F002928B8 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		027363C2248A616B007FF5E8 /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		027363C5248A616B007FF5E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 				027363C9248A616B007FF5E8 /* LoginViewController.swift */,
 				024429FA2498EB18008DEB01 /* MapViewController.swift */,
 				024429FC249A7097008DEB01 /* TableViewController.swift */,
+				02404ECF249CC43700983CAE /* AddViewController.swift */,
+				0256449B249E21F700635FEC /* ConfirmLocationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,6 +194,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0256449C249E21F700635FEC /* ConfirmLocationViewController.swift in Sources */,
+				02404ED0249CC43700983CAE /* AddViewController.swift in Sources */,
 				027363E0248CC304007FF5E8 /* parseAPI.swift in Sources */,
 				027363CA248A616B007FF5E8 /* LoginViewController.swift in Sources */,
 				0296A41324944537009CDDA2 /* UdacityAPI.swift in Sources */,

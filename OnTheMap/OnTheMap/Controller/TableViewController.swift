@@ -55,8 +55,9 @@ class TableViewController : UIViewController, UITableViewDataSource, UITableView
     
     @IBAction func logoutTapped(_ sender: Any) {
         UdacityAPI.deleteSession(completionHandler:{ (error) in
-            self.dismiss(animated: true, completion: nil)
-             
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: nil)
+            }
         })
     }
     

@@ -60,12 +60,12 @@ class parseAPI {
         
     }
     
-    class func postRequest(completionHandler: @escaping (StudentLocationList?, Error?) -> Void) {
+    class func postRequest(location:String,link:String,lat:Double,long:Double,completionHandler: @escaping (StudentLocationList?, Error?) -> Void) {
         
         var request = URLRequest(url: URL(string: "https://onthemap-api.udacity.com/v1/StudentLocation")!)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = "{\"uniqueKey\": \"1234\", \"firstName\": \"John\", \"lastName\": \"Doe\",\"mapString\": \"Mountain View, CA\", \"mediaURL\": \"https://udacity.com\",\"latitude\": 37.386052, \"longitude\": -122.083851}".data(using: .utf8)
+        request.httpBody = "{\"uniqueKey\": \"\(UdacityAPI.Auth.key)\", \"firstName\": \"John\", \"lastName\": \"Doe\",\"mapString\": \"\(location)\", \"mediaURL\": \"\(link)\",\"latitude\": \(lat), \"longitude\": \(long)}".data(using: .utf8)
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
           guard let data = data else {

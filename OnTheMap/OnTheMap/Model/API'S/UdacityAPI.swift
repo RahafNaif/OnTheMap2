@@ -75,6 +75,7 @@ class UdacityAPI {
           let range = 5..<data!.count
           let newData = data?.subdata(in: range) /* subset response data! */
           print(String(data: newData!, encoding: .utf8)!)
+          completionHandler(nil)
         }
         task.resume()
     }
