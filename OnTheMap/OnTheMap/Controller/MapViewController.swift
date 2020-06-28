@@ -72,9 +72,20 @@ class MapViewController : UIViewController, MKMapViewDelegate{
         if control == view.rightCalloutAccessoryView {
             let app = UIApplication.shared
             if let toOpen = view.annotation?.subtitle! {
-                app.openURL(URL(string: toOpen)!)
+                if verifyUrl(urlString: toOpen){
+                    app.openURL(URL(string: toOpen)!)
+                }//for the last review the url is vaild by the verifyUrl func
             }
         }
+    }
+    
+    func verifyUrl (urlString: String?) -> Bool {
+        if let urlString = urlString {
+            if let url = NSURL(string: urlString) {
+                return true
+            }
+        }
+        return false
     }
     
     @IBAction func logoutTapped(_ sender: Any) {

@@ -60,7 +60,7 @@ class parseAPI {
         
     }
     
-    class func postRequest(location:String,link:String,lat:Double,long:Double,completionHandler: @escaping (StudentLocationList?, Error?) -> Void) {
+    class func postRequest(location:String,link:String,lat:Double,long:Double,completionHandler: @escaping (AddLocationResponse?, Error?) -> Void) {
         
         var request = URLRequest(url: URL(string: "https://onthemap-api.udacity.com/v1/StudentLocation")!)
         request.httpMethod = "POST"
@@ -73,7 +73,7 @@ class parseAPI {
               return
           }
           let decoder = JSONDecoder()
-          let student = try! decoder.decode(StudentLocationList.self, from: data)
+          let student = try! decoder.decode(AddLocationResponse.self, from: data)
           completionHandler(student , error)
           print(String(data: data, encoding: .utf8)!)
         }
@@ -82,8 +82,8 @@ class parseAPI {
     
     class func putRequest(completionHandler: @escaping (StudentLocationList?, Error?) -> Void) {
         
-        var request = URLRequest(url: URL(string: "https://onthemap-api.udacity.com/v1/StudentLocation/8ZExGR5uX8")!)
-        request.httpMethod = "POST"
+        var request = URLRequest(url: URL(string: "https://onthemap-api.udacity.com/v1/StudentLocation/\(UdacityAPI.Auth.key)")!)
+        request.httpMethod = "PUT"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = "{\"uniqueKey\": \"1234\", \"firstName\": \"John\", \"lastName\": \"Doe\",\"mapString\": \"Mountain View, CA\", \"mediaURL\": \"https://udacity.com\",\"latitude\": 37.386052, \"longitude\": -122.083851}".data(using: .utf8)
         let session = URLSession.shared

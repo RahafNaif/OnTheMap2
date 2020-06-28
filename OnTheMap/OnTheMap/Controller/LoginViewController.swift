@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController , UITextFieldDelegate {
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -16,11 +16,19 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var singupButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        email.delegate = self
+        password.delegate = self
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         email.text = ""
         password.text = ""
+        password.isSecureTextEntry = true
         
    
     }
@@ -63,6 +71,12 @@ class LoginViewController: UIViewController {
         password.isEnabled = !loggingIn
         loginButton.isEnabled = !loggingIn
         singupButton.isEnabled = !loggingIn
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true;
     }
 
 

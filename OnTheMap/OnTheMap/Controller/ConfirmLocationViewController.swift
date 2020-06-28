@@ -37,11 +37,13 @@ class ConfirmLocationViewController : UIViewController, MKMapViewDelegate{
     
     @IBAction func finishTapped(_ sender: Any) {
         parseAPI.postRequest(location: locationInfo.location, link: locationInfo.link, lat: locationInfo.lat, long: locationInfo.long) {(StudentLocationList ,error) in
-            guard error != nil else{
-                print(error!)
+            guard error == nil else{
+                self.showFailure(title: "Error", message: "\(error)")
                 return
             }
-            self.dismiss(animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
@@ -82,6 +84,12 @@ class ConfirmLocationViewController : UIViewController, MKMapViewDelegate{
                 app.openURL(URL(string: toOpen)!)
             }
         }
+    }
+    
+    func showFailure(title: String ,message: String) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertVC, animated: false, completion: nil)
     }
     
 }

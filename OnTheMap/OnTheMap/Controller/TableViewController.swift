@@ -50,7 +50,9 @@ class TableViewController : UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let location = locations[indexPath.row]
         let url = URL(string: location.mediaURL)
-        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+        if let safeURL = url {
+            UIApplication.shared.open(safeURL, options: [:], completionHandler: nil)
+        }
     }
     
     @IBAction func logoutTapped(_ sender: Any) {
